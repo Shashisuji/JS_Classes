@@ -245,18 +245,88 @@
     // console.log(Rectangle.area);
     //----------------------------------------------------------------------------------------------
 
-    class Teacher{
-        constructor(name, age){
-            console.log("Creation of Teacher")
-            this.name = name;
-            this.age = age;
+    // class Teacher{
+    //     constructor(name, age){
+    //         console.log("Creation of Teacher")
+    //         this.name = name;
+    //         this.age = age;
+    //     }
+
+    //     printData(){
+    //         console.log(`Name is : ${this.name}`);
+    //         console.log(`Age is : ${this.age}`);
+    //     }
+    // }
+
+    // let teacher1 = new Teacher("Shashi", 32);
+    // teacher1.printData();
+
+    class vehicle{
+        constructor(brand, model, price){
+            this._brand = brand
+            this._model = model
+            this._price = price
         }
 
-        printData(){
-            console.log(`Name is : ${this.name}`);
-            console.log(`Age is : ${this.age}`);
+        getInsuranceCost(months=12){
+            return months * 0
+        }
+
+        printData(months=12){
+            console.log("Brand : " + this._brand )
+            console.log("Model : " + this._model )
+            console.log("Price : " + this._price )
+            console.log("Gears : " + this._gears)
+            console.log("Insurance : " + this.getInsuranceCost() )
         }
     }
 
-    let teacher1 = new Teacher("Shashi", 32);
-    teacher1.printData();
+    class scooter extends vehicle{
+        constructor(brand, model, price, gears="1f4b"){
+            super(brand, model, price)
+            this._gears = gears
+        }
+        getInsuranceCost(months=12){
+            return months * 7481
+        
+    }
+}
+    class car extends vehicle{
+        constructor(brand, model, price, gears="5+R"){
+            super(brand, model, price)
+            this._gears = gears
+        }
+        getInsuranceCost(months=12){
+            return months * 10000
+        
+    
+}
+    }
+
+    class bicycle extends vehicle{
+        constructor(brand, model, price, gears=0){
+            super(brand, model, price)
+            this._gears = gears
+        }
+    }
+
+    class superBicycle extends bicycle{
+        constructor(brand, model, price, gears){
+            super(brand, model, price)
+            this._gears = gears
+    }
+}
+
+    let sc1 = new scooter("Bajaj", "Avenger", 120000)
+    let cr1 = new car("Maruti", "Swift", 800000)
+    let bc1 = new bicycle("Hero", "Atlas", 4500)
+    let sb1 = new superBicycle("KTM", "Mybyk", 20000, "3f9b")
+
+    // console.log("The insurance of Scooter is " + sc1.getInsuranceCost(12))
+    // console.log("The insurance of Car is " + cr1.getInsuranceCost(12))
+    // console.log("The insurance of Bicycle is " + bc1.getInsuranceCost(12))
+
+    sc1.printData()
+    cr1.printData()
+    bc1.printData()
+    sb1.printData()
