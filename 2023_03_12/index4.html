@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+<body>
+    <button>Click Me</button>
+    <p>Miss Me</p>
+
+    <script>
+
+    const P = document.querySelector('p');
+    const Button = document.querySelector('button');
+
+        const changetext = () => {
+            // const P = document.querySelector('p');
+            P.textContent = "BatMan";
+        }
+
+        const changetext1 = () => {
+           
+            P.textContent = "Spidy";
+        }
+
+        const changetext2 = () => {
+            
+            P.textContent = "Shashi";
+        }
+
+        Button.addEventListener('mouseover', changetext, false);
+        Button.addEventListener('mouseout', changetext1, false);
+        Button.addEventListener('dblclick', changetext2, false);
+    </script>
+    
+</body>
+</html>

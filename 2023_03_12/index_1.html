@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creating Nodes</title>
+</head>
+<body>
+    <a id="nav" href="index.html">Index</a>
+    <a id="nav" href="index_2.html">Index_2</a>
+    <a id="nav" href="index_3.html">Index_3</a>
+    <h1>Document Object Model</h1>
+    <ul>
+        <li>abc</li>
+        <li>cde</li>
+        <li>efg</li>
+    </ul>
+
+    <script>
+
+        const paragraph = document.createElement('p');
+        paragraph.textContent = "abcdefg";
+        document.body.appendChild(paragraph);
+
+
+        const parentnode = document.querySelector('ul');
+
+        const new_abc = document.createElement('li');
+        new_abc.textContent = "ghi";
+        parentnode.appendChild(new_abc);
+
+        const new_elem = document.createElement('li');
+        new_elem.textContent = "XXX";
+        new_node3 = parentnode.children[3];
+        parentnode.insertBefore(new_elem, new_node3);
+
+        parentnode.children[1].remove();
+
+        //parentnode.replaceChild(new_elem, new_node3);
+        
+
+
+    </script>
+</body>
+</html>

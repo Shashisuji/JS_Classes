@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        html {font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 
+        Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        color: #333;}
+
+        body {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        div, article {
+            padding: 10px;
+            margin: 5px;
+            border: 1px solid #dedede;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Accessing all elements in DOM</h1>
+
+    <h2>ID #demo</h2>
+    <div id="demo">Accessing using ID</div>
+
+    <h2>Class .demo</h2>
+    <div class="demo">Accessing using Class 1</div>
+    <div class="demo">Accessing using Class 2</div>
+
+    <h2> Tag -artcle</h2>
+    <article>Accessing using Tag (1)</article>
+    <article>Accessing using Tag (1)</article>
+
+    <h2>Query Selector</h2>
+    <div id="demo-query">Accessing using Query Selector</div>
+
+    <h2>Query Selector All</h2>
+    <div class="demo-query-all">Accessing using Query Selector All 1</div>
+    <div class="demo-query-all">Accessing using Query Selector All 2</div>
+
+    <!-- <a id="nav" href="index.html">Home</a> <br>
+    <button id="changeBgColor">Change BG Color</button> -->
+
+    <script>
+
+        const demoId = document.getElementById("demo")
+        const demoClass = document.getElementsByClassName("demo")
+        const demoTag = document.getElementsByTagName("article")
+        const demoQuery = document.querySelector("#demo-query")
+        const demoQueryAll = document.querySelectorAll(".demo-query-all")
+
+        demoId.style.border = "1px solid red";
+
+        for(i = 0; i <demoClass.length; i++){
+        demoClass[i].style.border ="2px dotted green";
+        }
+        for(i = 0; i <demoTag.length; i++){
+        demoTag[i].style.border ="2px solid blue";
+        }
+        
+        demoQuery.style.border ="2px solid red";
+        
+
+        demoQueryAll.forEach(query => {
+            query.style.border = "2px dotted purple"
+        })
+        
+        // let button = document.getElementById("changeBgColor")
+        // button.addEventListener("click", () => {
+        //     document.body.style.backgroundColor = "red"
+        // })
+
+
+        // let navlink = document.getElementById("nav")
+        // navlink.href = "https://www.google.com"
+        // navlink.textContent = "Let's go to Google"
+    </script>
+</body>
+</html>
